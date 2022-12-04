@@ -12,20 +12,26 @@ function processDay(day) {
 module.exports = (year) => {
   const fullPath = resolvePath('./', year, 'js')
 
-  if (!fs.existsSync(fullPath)) {
-    fs.mkdirSync(fullPath, { recursive: true })
+  fs.mkdirSync(fullPath, { recursive: true })
 
-    for (let i = 1; i <= 25; i++) {
-      const day = processDay(i)
-      const dayPath = resolvePath('./', year, 'js', day)
+  for (let i = 1; i <= 25; i++) {
+    const day = processDay(i)
+    const dayPath = resolvePath('./', year, 'js', day)
 
-      const md = `# Day ${i}\n\nSource: [https://adventofcode.com/${year}/day/${i}]`
+    const md = `# Day ${i}\n\nSource: [https://adventofcode.com/${year}/day/${i}]`
 
-      fs.mkdirSync(dayPath, { recursive: true })
-      fs.writeFileSync(`${dayPath}/code.js`, '')
-      fs.writeFileSync(`${dayPath}/input.txt`, '')
-      fs.writeFileSync(`${dayPath}/README.md`, md)
-      fs.writeFileSync(`${dayPath}/solution.txt`, '')
-    }
+    const files = [
+      `${dayPath}/code1.js`,
+      `${dayPath}/code2.js`,
+      `${dayPath}/input.txt`,
+      `${dayPath}/README.md`,
+      `${dayPath}/solution.txt`
+    ]
+
+    fs.mkdirSync(dayPath, { recursive: true })
+
+    files.forEach((f, i) => {
+      if (!fs.existsSync(f)) fs.writeFileSync(f, i === 3 ? md : '')
+    })
   }
 }
