@@ -19,10 +19,12 @@ module.exports = (year) => {
       const day = processDay(i)
       const dayPath = resolvePath('./', year, 'js', day)
 
+      const md = `# Day ${i}\n\nSource: [https://adventofcode.com/${year}/day/${i}]`
+
       fs.mkdirSync(dayPath, { recursive: true })
-      fs.writeFileSync(`${dayPath}/README.md`, '')
-      fs.writeFileSync(`${dayPath}/input.txt`, '')
       fs.writeFileSync(`${dayPath}/code.js`, '')
+      fs.writeFileSync(`${dayPath}/input.txt`, '')
+      fs.writeFileSync(`${dayPath}/README.md`, md)
       fs.writeFileSync(`${dayPath}/solution.txt`, '')
     }
   }
