@@ -1,3 +1,3 @@
-const build = require('./utils/js')
+const build = require('./build/js')
 
 build()
