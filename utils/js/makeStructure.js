@@ -18,8 +18,8 @@ module.exports = (year) => {
     const day = processDay(i)
     const dayPath = resolvePath('./', year, 'js', day)
 
-    const md = `# Day ${i}\n\nSource: [https://adventofcode.com/${year}/day/${i}]`
-    const solutions = `Part 1:\nPart 2:`
+    const md = `# Day ${i}\n\nSource: [https://adventofcode.com/${year}/day/${i}]\n`
+    const solutions = `Part 1: \nPart 2: \n`
 
     const files = [
       [`${dayPath}/code1.js`, ''],
