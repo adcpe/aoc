@@ -8,9 +8,9 @@ To start a new year/language, I will create scripts that generate the folder str
 
 ## Languages
 
-|  Language  |     Command     |
-| :--------: | :-------------: |
-| JavaScript | `node build.js` |
+|  Language  |      Command      |
+| :--------: | :---------------: |
+| JavaScript | `node builder.js` |
 
 ## Folder structure
 
