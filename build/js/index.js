@@ -9,7 +9,7 @@ module.exports = () => {
   })
 
   console.log('')
-  console.log('Enter a complete year from 2013 onwards (YYYY)')
+  console.log('Enter a complete year from 2015 onwards (YYYY)')
   rl.question('Year: ', (year) => {
     if (+year < 2015 || +year > 2022 || !+year) {
       console.error('Invalid input.')
