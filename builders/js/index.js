@@ -12,7 +12,8 @@ module.exports = () => {
   console.log('Enter a complete year from 2015 onwards (YYYY)')
   rl.question('Year: ', (year) => {
     if (+year < 2015 || +year > 2022 || !+year) {
-      console.error('Invalid input.')
+      console.log('')
+      console.error('\x1b[31mInvalid input.')
     } else {
       makeStructure(year)
     }
