@@ -24,7 +24,6 @@ module.exports = (year) => {
     const files = [
       [`${dayPath}/code1.js`, ''],
       [`${dayPath}/code2.js`, ''],
-      [`${dayPath}/input.txt`, ''],
       [`${dayPath}/README.md`, md],
       [`${dayPath}/solution.txt`, solutions]
     ]
